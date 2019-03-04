@@ -1,3 +1,4 @@
+
 #-------------------------------------------------
 #
 # Project created by QtCreator 2011-08-08T17:57:42
@@ -133,3 +134,5 @@ macx {
 
 RESOURCES += \
     resources.qrc
+
+QT += widgets    

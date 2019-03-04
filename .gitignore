@@ -7,3 +7,7 @@ hairless-midiserial
 *~
 Makefile
 *#
+.DS_Store
+.qmake.stash
+hairless-midiserial.app/
+libraries/.DS_Store
