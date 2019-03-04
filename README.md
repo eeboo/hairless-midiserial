@@ -29,3 +29,8 @@ Both libraries are small so they compiled as source files directly into Hairless
 # Release builds
 
 The official releases are static linked, so they've actually been built against Qt versions that were compiled from source, configured with `-static` for static linking.
+
+# create virtual serial port
+
+brew install socat
+socat -d -d pty,raw,echo=0 pty,raw,echo=0 
