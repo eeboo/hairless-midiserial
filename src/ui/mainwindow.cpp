@@ -160,26 +160,16 @@ void MainWindow::refreshMidi(QComboBox *combo, RtMidi *midi)
 
 void MainWindow::refreshSerial()
 {
-
-    ui->cmbSerial->addItem("virtual serial port", QVariant("/dev/ttys003"));
-
-
-    /*QString current = ui->cmbSerial->currentText();
+    QString current = ui->cmbSerial->currentText();
     ui->cmbSerial->clear();
     ui->cmbSerial->addItem(TEXT_NOT_CONNECTED);
-    QList<QextPortInfo> ports = QextSerialEnumerator::getPorts();
-    for(QList<QextPortInfo>::iterator it = ports.begin(); it != ports.end(); it++) {
-        QString label = it->friendName.isEmpty() ? it->portName : it->friendName;
-#ifdef Q_OS_LINUX
-        QString portName = it->physName; // Bug workaround, Linux needs the /dev/ in front of port name
-#else
-        QString portName = it->portName;
-#endif
-        ui->cmbSerial->addItem(label, QVariant(portName));
-        if(current == label) {
+    for(int i=0; i<10; i++){
+        QString portName = QString::fromStdString("/dev/ttys00" + std::to_string(i));
+        ui->cmbSerial->addItem(portName, QVariant(portName));
+        if(current == portName) {
             ui->cmbSerial->setCurrentIndex(ui->cmbSerial->count() - 1);
         }
-    }*/
+    }
 }
 
 void MainWindow::onDebugClicked(bool value)
